@@ -1,0 +1,29 @@
+a, blockquote, body, div, h1, h2, h3, h4, h5, h6, html, li, p, ul {
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: "Avenir Next", Avenir, "Helvetica Neue", Helvetica, "Wawati SC", "Lantinghei SC", "Hiragino Sans GB", "Microsoft YaHei", 微软雅黑, STHeiti, "WenQuanYi Micro Hei", SimSun, sans-serif;
+  min-width: 980px;
+  color: rgb(85, 85, 85);
+  margin: auto;
+  /*overflow-x: hidden;*/
+}
+h3{
+  font-weight: 400;
+}
+
+.temp1{
+  background: url("../img/1.jpg");
+}
+.temp2{
+  background: url("../img/2.jpg");
+}
+.temp3{
+  background: url("../img/3.jpg");
+}
+.temp4{
+  background: url("../img/4.jpg");
+}
+
+

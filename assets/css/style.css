@@ -1,0 +1,92 @@
+a, blockquote, body, div, h1, h2, h3, h4, h5, h6, html, li, p, ul {
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: "Avenir Next", Avenir, "Helvetica Neue", Helvetica, "Wawati SC", "Lantinghei SC", "Hiragino Sans GB", "Microsoft YaHei", 微软雅黑, STHeiti, "WenQuanYi Micro Hei", SimSun, sans-serif;
+    min-width: 980px;
+    color: rgb(85, 85, 85);
+    margin: auto;
+    /*overflow-x: hidden;*/
+}
+h3{
+    font-weight: 400;
+}
+
+
+
+.header{
+    position: absolute;
+    top: -60px;
+    left: 0;
+    z-index: 10;
+    width: 100%;
+    height: 60px;
+    background: rgba(255,255,255,.2);
+    box-shadow: 0 0 10px 1px #999;
+    line-height: 60px;
+    transition: top .3s;
+}
+.header-btn{
+    text-align: center;
+    transition: .3s;
+    cursor: pointer;
+}
+.header-btn:hover{
+    box-shadow: 0 0 5px 1px #999 inset;
+}
+.back{
+    width: 100px;
+}
+
+.body{
+    position: relative;
+    width: 100%;
+    max-width: 1000px;
+    min-width: 800px;
+    margin: auto;
+    box-sizing: border-box;
+    top: 100px;
+    opacity: 0;
+    font-size: 0;
+    transition: opacity .3s;
+}
+.img-ctn{
+    display: inline-block;
+    width: 33.333333%;
+    text-align: center;
+}
+.img-box{
+    position: relative;
+    width: 260px;
+    height: 180px;
+    background: url("../img/1.jpg");
+    display: inline-block;
+    z-index: 20;
+    background-size: cover;
+    border-radius: 5px;
+    overflow: hidden;
+    transition: box-shadow .3s;
+}
+.img-info{
+    position: absolute;
+    display: inline-block;
+    left: 100px;
+    opacity: 0;
+    font-size: 16px;
+    width: 260px;
+    height: 180px;
+    padding: 20px;
+    box-sizing: border-box;
+    line-height: 36px;
+    color: #faf8f9;
+    background: rgba(0,0,0,.5);
+    transition: left .3s, opacity .3s;
+}
+.img-box:hover{
+    box-shadow: 0 0 5px 1px #fff;
+}
+.img-box:hover > .img-info{
+    left: 0;
+    opacity: 1;
+}
