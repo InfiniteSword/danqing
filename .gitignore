@@ -3,7 +3,5 @@
 .idea
 ._*
 node_modules
+dist
 *.log
-
-*.jpg
-*.png
