@@ -26,16 +26,16 @@
 
 <style lang="scss">
     .header{
-        position: absolute;
+        position: relative;
         top: -60px;
         left: 0;
-        z-index: 10;
         width: 100%;
         height: 60px;
         background: rgba(255,255,255,.2);
         box-shadow: 0 0 10px 1px #999;
         line-height: 60px;
         transition: top .3s;
+        z-index: 100;
     }
     .header-btn{
         text-align: center;

@@ -6,6 +6,7 @@
                 作者：<span>{{author}}</span>
                 <br>
                 tags：<span v-for="item in tags">{{item}} </span>
+                <span @click="magnify" class="iconfont img-magnify">&#xe653;</span>
             </div>
         </div>
     </div>
@@ -21,15 +22,23 @@
             }
         },
         props: ['url','title','author','tags'],
+        methods: {
+            magnify: function () {
+                this.$parent.picMagnified.src = this.url;
+                this.$parent.picMagnified.title = this.title;
+                this.$parent.magnifying = true;
+            }
+        }
     }
 
 </script>
 
-<style style="scss">
+<style lang="scss">
     .img-ctn{
         display: inline-block;
         width: 33.333333%;
         text-align: center;
+        padding: 30px 0;
     }
     .img-box{
         position: relative;
@@ -45,7 +54,8 @@
     .img-info{
         position: absolute;
         display: inline-block;
-        left: 100px;
+        top: 50px;
+        left: 0;
         opacity: 0;
         font-size: 16px;
         width: 260px;
@@ -55,14 +65,21 @@
         line-height: 36px;
         color: #faf8f9;
         background: rgba(0,0,0,.5);
-        transition: left .3s, opacity .3s;
+        transition: top .3s, opacity .3s;
     }
     .img-box:hover{
         box-shadow: 0 0 5px 1px #fff;
     }
     .img-box:hover > .img-info{
-        left: 0;
+        top: 0;
         opacity: 1;
     }
+    .img-magnify{
+        position: absolute;
+        right: 10px;
+        bottom: 0;
+        cursor: pointer;
+    }
+
 
 </style>

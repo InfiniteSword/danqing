@@ -2,32 +2,43 @@
     <div id="app">
         <landing v-bind:blur="bgBlur" />
         <navbar v-bind:display="bgBlur" />
-        <home-body v-bind:display="bgBlur"/>
+        <img-panel v-bind:flag="bgBlur" />
     </div>
 </template>
 
 <script>
     import Landing from './Landing.vue'
     import Navbar from './Navbar.vue'
-    import HomeBody from './HomeBody.vue'
+    import ImgPanel from './ImgPanel.vue'
 
     export default {
-        components:  { Landing,Navbar,HomeBody },
+        components:  { Landing, Navbar,ImgPanel },
         data: function () {
             return {
-                bgBlur: false
+                bgBlur: false,
+                setFlag: true
             }
         },
         methods: {
             eventCheck: function (event) {
-                console.log(1);
+                var that = this;
+                if (this.bgBlur === false){
+                    event.preventDefault();
+                    this.setFlag = false;
+                    setTimeout(function () {
+                        that.setFlag = true;
+                    },1300)
+                }
+                if (this.setFlag === false){
+                    event.preventDefault();
+                }
                 if (event.delta < 0) {
                     this.bgBlur = true;
                 }
+
             }
         },
         mounted: function() {
-            console.log(0);
             const _eventCompat = function(event) {
                 var type = event.type;
                 if (type == 'DOMMouseScroll' || type == 'mousewheel') {
@@ -50,7 +61,6 @@
             }
             window.addEventListener(type, function (event) {
                 that.eventCheck.call(this, _eventCompat(event));
-
             });
         },
     }
