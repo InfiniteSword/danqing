@@ -1,13 +1,18 @@
 <template>
     <div class="header" :style="display?'top:0':''">
-        <div class="back header-btn" @click="getBack">返回</div>
+        <div class="back header-btn" @click="getBack">热门</div>
         <div class="nav">
-
+            <router-link to="/search">
+                <span class="iconfont header-btn__search">&#xe611;</span>
+            </router-link>
         </div>
     </div>
 </template>
 
 <script>
+
+    import { mapGetters, mapMutations } from 'vuex'
+
     export default {
         name: 'navbar',
         data: function () {
@@ -17,9 +22,7 @@
         },
         props: ['display'],
         methods: {
-            getBack: function () {
-                this.$parent.bgBlur = false;
-            }
+            ...mapMutations({getBack: 'clear'})
         },
     }
 </script>
@@ -38,6 +41,7 @@
         z-index: 100;
     }
     .header-btn{
+        display: inline-block;
         text-align: center;
         transition: .3s;
         cursor: pointer;
@@ -47,5 +51,13 @@
     }
     .back{
         width: 100px;
+    }
+    .nav{
+        position: absolute;
+        left: 100px;
+        top: 0;
+    }
+    .header-btn__search{
+        font-weight: 600;
     }
 </style>

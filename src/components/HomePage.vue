@@ -2,7 +2,8 @@
     <div id="app">
         <landing v-bind:blur="bgBlur" />
         <navbar v-bind:display="bgBlur" />
-        <img-panel v-bind:flag="bgBlur" />
+        <!--<img-panel v-bind:flag="bgBlur" />-->
+        <router-view></router-view>
     </div>
 </template>
 
@@ -11,15 +12,23 @@
     import Navbar from './Navbar.vue'
     import ImgPanel from './ImgPanel.vue'
 
+    import { mapState, mapMutations } from 'vuex'
+
+
     export default {
         components:  { Landing, Navbar,ImgPanel },
         data: function () {
             return {
-                bgBlur: false,
                 setFlag: true
             }
         },
+        computed: {
+            ...mapState({
+                bgBlur: state => state.blurState.blurred
+            })
+        },
         methods: {
+            ...mapMutations(['blur']),
             eventCheck: function (event) {
                 var that = this;
                 if (this.bgBlur === false){
@@ -33,10 +42,9 @@
                     event.preventDefault();
                 }
                 if (event.delta < 0) {
-                    this.bgBlur = true;
+                    this.blur();
                 }
-
-            }
+            },
         },
         mounted: function() {
             const _eventCompat = function(event) {

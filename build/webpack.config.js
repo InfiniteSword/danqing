@@ -1,4 +1,5 @@
 const path = require('path');
+const fs = require('fs');
 const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -19,6 +20,7 @@ module.exports = {
         rules: [{
             test: /\.js$/,
             loader: 'babel-loader',
+            options: JSON.parse(fs.readFileSync('.babelrc')),
             exclude: /node_modules/
         }, {
             test: /\.vue$/,
@@ -89,7 +91,7 @@ module.exports = {
             'src': SRC_PATH,
             'assets': SRC_PATH + '/assets',
             'node_modules': ROOT_PATH + '/node_modules',
-            'vue$': 'vue/dist/vue.common.js'
+            'vue$': 'vue/dist/vue.common.js',
         }
     }
 }

@@ -13,6 +13,8 @@
     import ImgBox from './ImgBox.vue'
     import Magnifier from './Magnifier.vue'
 
+    import { mapState, mapMutations } from 'vuex'
+
     export default {
         components: { ImgBox,Magnifier },
         data: function () {
@@ -31,7 +33,11 @@
                 }
             }
         },
-        props: ['flag'],
+        computed: {
+            ...mapState({
+                flag: state => state.blurState.blurred
+            })
+        },
         mounted: function () {
             const that = this;
             let load = new Promise(function (resolve) {
