@@ -1,12 +1,12 @@
 <template>
     <div class="header" :style="display?'top:0':''">
-        <div class="back header-btn" @click="getBack">热门</div>
+        <div class="back header-btn" @click="getBack">首页</div>
         <div class="nav">
-            <!--<div>-->
-                <!--<router-link to="/search">-->
-                    <!--<span class="iconfont header-btn__search">&#xe611;</span>-->
-                <!--</router-link>-->
-            <!--</div>-->
+            <div>
+                <!-- <router-link to="/search">
+                    <span class="iconfont header-btn__search">&#xe611;</span>
+                </router-link> -->
+            </div>
         </div>
     </div>
 </template>
@@ -24,7 +24,11 @@
         },
         props: ['display'],
         methods: {
-            ...mapMutations({getBack: 'clear'})
+            ...mapMutations(['clear']),
+            getBack() {
+                this.$router.push('/');
+                this.clear();
+            }
         },
     }
 </script>

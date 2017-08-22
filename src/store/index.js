@@ -1,7 +1,7 @@
-import Vue from 'vue'
-import Vuex from 'vuex'
+import Vue from 'vue';
+import Vuex from 'vuex';
 
-import bgMode from './modules/bgMode'
+import bgMode from './modules/bgMode';
 
 Vue.use(Vuex);
 
@@ -12,4 +12,4 @@ export default new Vuex.Store({
         bgMode
     },
     strict: debug,
-})
+});
