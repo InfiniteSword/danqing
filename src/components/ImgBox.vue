@@ -2,10 +2,14 @@
     <div class="img-ctn">
         <div class="img-box" :style="'background:url('+url+');background-size: cover;'">
             <div class="img-info">
-                <h3>{{title}}</h3>
-                作者：<span>{{author}}</span>
+                <h3>
+                    <router-link :to="{ name: 'work', params: { workId: workId }}">
+                        {{title}}
+                    </router-link>
+                </h3>
+                作者：<span><router-link :to="{ name: 'user', params: { userId: userId }}">{{author}}</router-link></span>
                 <br>
-                tags：<span v-for="item in tags">{{item}} </span>
+                tags：<span v-for="item in tags"> {{item}} </span>
                 <span @click="magnify" class="iconfont img-magnify">&#xe653;</span>
             </div>
         </div>
@@ -21,7 +25,7 @@
 
             }
         },
-        props: ['url','title','author','tags'],
+        props: ['url','title','author','tags', 'userId', 'workId'],
         methods: {
             magnify: function () {
                 this.$parent.picMagnified.src = this.url;

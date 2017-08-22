@@ -4,8 +4,10 @@ import Vuex from 'vuex'
 import store from './store'
 
 import HomePage from './components/HomePage.vue';
-import Search from './components/Search.vue';
 import ImgPanel from './components/ImgPanel.vue'
+import Search from './components/Search.vue';
+import Work from './components/Work.vue';
+import User from './components/User.vue';
 
 import '../assets/css/style.scss';
 
@@ -14,8 +16,10 @@ Vue.use(Vuex);
 Vue.use(VueRouter);
 
 const routes = [
-    { path: '/search', component: Search },
     { path: '/', component: ImgPanel },
+    { path: '/search', component: Search },
+    { path: '/work/:workId', component: Work, name: 'work' },
+    { path: '/user/:userId', component: User, name: 'user' },
 ];
 
 

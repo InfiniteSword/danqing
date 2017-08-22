@@ -1,7 +1,7 @@
 <template>
     <div class="body" :style="{ 'opacity' : opacity , 'display' : display}" >
         <template v-for="item in pics">
-            <img-box :url="item.url" :title="item.title" :author="item.author" :tags="item.tags" />
+            <img-box :url="item.url" :title="item.title" :author="item.author" :tags="item.tags" :workId="item.picId" :userId="item.userId" />
         </template>
         <magnifier :style="{ 'opacity' : magnifier.opacity , 'display' : magnifier.display , 'transition' : '.3s'}" :pic="picMagnified" />
     </div>
@@ -35,7 +35,7 @@
         },
         computed: {
             ...mapState({
-                flag: state => state.blurState.blurred
+                flag: state => state.bgMode.blurred
             })
         },
         mounted: function () {
