@@ -24,7 +24,7 @@
         },
         computed: {
             ...mapState({
-                bgBlur: state => state.blurState.blurred
+                bgBlur: state => state.bgMode.blurred
             })
         },
         methods: {

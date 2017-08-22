@@ -2,9 +2,11 @@
     <div class="header" :style="display?'top:0':''">
         <div class="back header-btn" @click="getBack">热门</div>
         <div class="nav">
-            <router-link to="/search">
-                <span class="iconfont header-btn__search">&#xe611;</span>
-            </router-link>
+            <!--<div>-->
+                <!--<router-link to="/search">-->
+                    <!--<span class="iconfont header-btn__search">&#xe611;</span>-->
+                <!--</router-link>-->
+            <!--</div>-->
         </div>
     </div>
 </template>
@@ -60,4 +62,7 @@
     .header-btn__search{
         font-weight: 600;
     }
+
+
+
 </style>

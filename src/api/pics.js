@@ -1,6 +1,7 @@
 const pics = [{
     'picId': 1,
     'author': 'swd3e2',
+    'userId': 10001,
     'title': 'Elsword-Aisha',
     'description': '',
     'tags': ['elsword','aisha'],
@@ -9,6 +10,7 @@ const pics = [{
 },{
     'picId': 2,
     'author': 'swd3e2',
+    'userId': 10001,
     'title': 'Neptune',
     'description': '',
     'tags': ['neptune'],
@@ -17,6 +19,7 @@ const pics = [{
 },{
     'picId': 3,
     'author': 'swd3e2',
+    'userId': 10001,
     'title': 'Void Princess',
     'description': '',
     'tags': ['elsword','aisha','vp'],
@@ -25,6 +28,7 @@ const pics = [{
 },{
     'picId': 4,
     'author': 'swd3e2',
+    'userId': 10001,
     'title': 'Elsword-Aisha',
     'description': '',
     'tags': ['elsword','aisha'],
@@ -33,6 +37,7 @@ const pics = [{
 },{
     'picId': 5,
     'author': 'swd3e2',
+    'userId': 10001,
     'title': 'Neptune',
     'description': '',
     'tags': ['neptune'],
@@ -41,6 +46,7 @@ const pics = [{
 },{
     'picId': 6,
     'author': 'swd3e2',
+    'userId': 10001,
     'title': 'Void Princess',
     'description': '',
     'tags': ['elsword','aisha','vp'],
@@ -49,6 +55,7 @@ const pics = [{
 },{
     'picId': 7,
     'author': 'swd3e2',
+    'userId': 10001,
     'title': 'Elsword-Aisha',
     'description': '',
     'tags': ['elsword','aisha'],
@@ -57,6 +64,7 @@ const pics = [{
 },{
     'picId': 8,
     'author': 'swd3e2',
+    'userId': 10001,
     'title': 'Neptune',
     'description': '',
     'tags': ['neptune'],
@@ -65,6 +73,7 @@ const pics = [{
 },{
     'picId': 9,
     'author': 'swd3e2',
+    'userId': 10001,
     'title': 'Void Princess',
     'description': '',
     'tags': ['elsword','aisha','vp'],
@@ -73,6 +82,7 @@ const pics = [{
 },{
     'picId': 10,
     'author': 'swd3e2',
+    'userId': 10001,
     'title': 'Neptune',
     'description': '',
     'tags': ['neptune'],
@@ -81,6 +91,7 @@ const pics = [{
 },{
     'picId': 11,
     'author': 'swd3e2',
+    'userId': 10001,
     'title': 'Void Princess',
     'description': '',
     'tags': ['elsword','aisha','vp'],
@@ -89,9 +100,9 @@ const pics = [{
 },];
 
 export default {
-    getInfo: function (n) {
+    getInfo: function (n,resolve) {
         setTimeout(function () {
-            return pics[n];
+            resolve(pics[n]);
         },200)
     },
     getAll: function (resolve) {
