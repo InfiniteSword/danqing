@@ -63,9 +63,8 @@ module.exports = merge(webpackBaseConfig, {
     },
     output: {
         path: path.resolve(__dirname, '../dist'),
-        publicPath: '/dist/',
+        publicPath: './',
         filename: `${library}-${version}.js`,
-        library: 'moeui',
         libraryTarget: 'umd',
         umdNamedDefine: true
     },
