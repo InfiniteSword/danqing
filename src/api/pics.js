@@ -36,11 +36,11 @@ const pics = [{
     'time': '2017-3-20 12:19'
 },{
     'picId': 5,
-    'author': 'swd3e2',
+    'author': 'unknown',
     'userId': 10001,
-    'title': 'Neptune',
+    'title': 'Window',
     'description': '',
-    'tags': ['neptune'],
+    'tags': [],
     'url': './images/5.jpg',
     'time': '2017-3-20 12:20'
 },{
